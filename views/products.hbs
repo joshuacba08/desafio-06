@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <main class="min-h-screen w-screen py-6 bg-yellow-50 flex items-center justify-center flex-col">
+        <h1 class="text-4xl uppercase py-4 mb-4 font-bold">Conocé nuestros productos</h1>
+        <div class="grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+
+           {{#if arrayProducts}} 
+           
+               {{#each arrayProducts}}
+                    <div class="bg-white w-72 h-96 shadow-md rounded m-3">
+                        <div class="h-3/4 w-full">
+                            <img class="w-full h-full object-cover rounded-t" src={{this.thumbnail}} alt="">
+                        </div>
+                        <div class="w-full h-1/4 p-3">
+                            <a href="#" class='hover:text-yellow-600 text-gray-700'>
+                            </a>
+                            <span class="text-lg font-semibold uppercase tracking-wide">
+                                    {{this.title}}
+                            </span>
+                        </div>
+                    </div>
+               {{/each}}     
+           {{/if}}  
+        </div>
+    </main>
+</body>
+</html>

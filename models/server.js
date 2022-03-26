@@ -1,5 +1,6 @@
 const express = require('express');
 var cors = require('cors');
+const path = require('path');
 
 class Server {
 
@@ -41,9 +42,9 @@ class Server {
     }
 
     views() {
-        //motores de plantillas  -- En este caso PUG
-        this.app.set('views', this.dirname + this.viewsPath);
-        this.app.set('view engine', 'pug');
+    //     motores de plantillas  -- En este caso HANDLEBARS
+        this.app.set('view engine', 'hbs');
+        this.app.set('views', './views'); 
     }
 
     listen() {
