@@ -44,7 +44,7 @@ const productsPost = async (req, res) => {
     } else {
         //almacenar
         const newId= await contenedor.save(req.body);
-        res.redirect('/');
+        res.redirect('/productos');
     }
 };
 
