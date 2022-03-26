@@ -43,7 +43,7 @@ class Server {
     views() {
         //motores de plantillas  -- En este caso PUG
         this.app.set('views', this.dirname + this.viewsPath);
-        this.app.set('view engine', 'pug');
+        this.app.set('view engine', 'ejs');
     }
 
     listen() {
